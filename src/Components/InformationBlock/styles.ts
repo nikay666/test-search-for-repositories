@@ -5,5 +5,8 @@ export const useStyles = makeStyles((theme: Theme) =>
     information: {
       fontSize: theme.typography.subtitle2.fontSize,
     },
+    chip: {
+      marginLeft: theme.spacing(1)
+    }
   })
 );

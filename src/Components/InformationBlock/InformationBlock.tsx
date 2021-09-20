@@ -1,5 +1,5 @@
 import React from 'react'
-import { Chip, Typography } from '@material-ui/core';
+import { Chip, Icon, Typography } from '@material-ui/core';
 import { useStyles } from './styles';
 
 interface IInformationBlockProps {
@@ -13,7 +13,7 @@ const InformationBlock = ({icon, count, title, className = ''}: IInformationBloc
   const classes = useStyles()
   return (
     <div className={`${classes.information} ${className} flex-center`} >
-      {icon}
+      <Icon fontSize='inherit' className={classes.icon} >{icon}</Icon>
       <Typography variant='inherit' noWrap component='p'>{title}</Typography>
       { count !== undefined && <Chip className={classes.chip} label={count} size='small' /> }
     </div>

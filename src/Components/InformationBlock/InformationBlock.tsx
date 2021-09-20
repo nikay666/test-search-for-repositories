@@ -15,7 +15,7 @@ const InformationBlock = ({icon, count, title, className = ''}: IInformationBloc
     <div className={`${classes.information} ${className} flex-center`} >
       <Icon fontSize='inherit' className={classes.icon} >{icon}</Icon>
       <Typography variant='inherit' noWrap component='p'>{title}</Typography>
-      { count !== undefined && <Chip className={classes.chip} label={count} size='small' /> }
+      { count !== undefined && <Chip  className={classes.chip} label={count} size='small' /> }
     </div>
   );
 };

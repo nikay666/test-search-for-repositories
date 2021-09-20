@@ -6,7 +6,10 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontSize: theme.typography.subtitle2.fontSize,
     },
     chip: {
-      marginLeft: theme.spacing(1)
+      marginLeft: theme.spacing(0.5)
+    },
+    icon: {
+      marginRight: theme.spacing(0.5) 
     }
   })
 );

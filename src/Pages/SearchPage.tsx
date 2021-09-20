@@ -43,7 +43,6 @@ export const SearchPage = () => {
       </List>
 
       <Button variant='outlined' color='primary' >Загрузить больше</Button>
-      <Link to='/repositories/1'>Rep</Link>
     </div>
   )
 };

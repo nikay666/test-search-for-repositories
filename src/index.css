@@ -35,3 +35,8 @@ code {
   align-items: center;
   
 }
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}

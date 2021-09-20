@@ -2,8 +2,7 @@ import React from 'react';
 import { createStyles, makeStyles, Theme, List, ListItem, Button } from '@material-ui/core';
 import { FullWidthCard } from '../Components/FullWidthCard';
 import { Link } from 'react-router-dom';
-
-import { SearchCard } from '../SearchCard';
+import { SearchCard } from '../Components/SearchCard';
 import { SearchInput } from '../Components/SearchInput';
 
 const useStyles = makeStyles((theme: Theme) => 

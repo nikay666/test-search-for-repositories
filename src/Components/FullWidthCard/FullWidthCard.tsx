@@ -1,9 +1,5 @@
 import React from 'react'
-import { Card, CardContent, Typography } from '@material-ui/core';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { CardTitle } from '../CardTitle';
-import { InformationBlock } from '../InformationBlock';
-import CircleIcon from '@mui/icons-material/Circle';
+import { Card } from '@material-ui/core';
 import { useStyles } from './styles';
 
 interface IFullWidthCardProps {

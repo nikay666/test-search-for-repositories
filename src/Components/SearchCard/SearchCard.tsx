@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardContent, Typography } from '@material-ui/core';
-import { CardTitle } from '../Components/CardTitle';
-import { InformationBlock } from '../Components/InformationBlock';
+import { CardTitle } from '../CardTitle';
+import { InformationBlock } from '../InformationBlock';
 import CircleIcon from '@mui/icons-material/Circle';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { useStyles } from './styles';

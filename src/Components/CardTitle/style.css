@@ -1,0 +1,6 @@
+.card__title {
+  text-decoration: none;
+}
+.card__title:hover{
+  text-decoration: underline;
+}

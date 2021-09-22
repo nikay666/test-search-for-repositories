@@ -7,6 +7,7 @@ export interface IOwnerRepository {
 }
 
 export interface IRepositoryPreview {
+  id: string
   description: string
   primaryLanguage: ILanguage
   nameWithOwner: string

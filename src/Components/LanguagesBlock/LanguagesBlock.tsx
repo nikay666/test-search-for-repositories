@@ -1,67 +1,36 @@
-import { List, ListItem, Typography } from '@material-ui/core'
 import React from 'react'
+import { List, ListItem, Typography } from '@material-ui/core'
 import { InformationBlock } from '../InformationBlock'
 import CircleIcon from '@mui/icons-material/Circle';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-
-export const useStyles = makeStyles((theme: Theme) => 
-createStyles({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-
-  },
-  information: {
-    marginRight: theme.spacing(2),
-    margin: '5px 0',
-    padding: 0,
-  },
-  list: {
-
-  },
-  listItem: {
-    padding: 0,
-  }
-
-})
-);
+import { useStyles } from './styles';
+import { ILanguages } from '../../Interfaces/language';
+import { getPercent } from '../../utils/getPercent';
 
 interface ILanguagesBlockProps {
-  className: string
+  className: string,
+  languages: ILanguages
 }
 
-const LanguagesBlock = ({className}: ILanguagesBlockProps) => {
+const LanguagesBlock = ({languages, className}: ILanguagesBlockProps) => {
   const classes = useStyles();
 
   return (
     <div className={className} >
-      <Typography variant='h6' component='p' >Languages</Typography>
+      <Typography variant='h6' component='p'>Languages</Typography>
       
       <List>
-        <ListItem className={classes.listItem} >
-        <InformationBlock
-            className={classes.information}
-            icon={<CircleIcon fontSize='inherit'/>}
-            title='JavaScript'
-            count={5}
-        />
-        </ListItem>
-        <ListItem className={classes.listItem} >
-        <InformationBlock
-            className={classes.information}
-            icon={<CircleIcon fontSize='inherit'/>}
-            title='JavaScript'
-            count={5}
-        />
-        </ListItem>
-        <ListItem className={classes.listItem} >
-        <InformationBlock
-            className={classes.information}
-            icon={<CircleIcon fontSize='inherit'/>}
-            title='JavaScript'
-            count={5}
-        />
-        </ListItem>
+        {
+          languages.edges.map(language => (
+            <ListItem key={language.node.id} className={classes.listItem} >
+            <InformationBlock
+                className={classes.information}
+                icon={<CircleIcon fontSize='inherit' htmlColor={language.node.color} />}
+                title={language.node.name}
+                percent={getPercent(languages.totalSize, language.size,)}
+            />
+            </ListItem>
+          ))
+        }
       </List>
     </div>
   )

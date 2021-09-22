@@ -5,10 +5,6 @@ export const useStyles = makeStyles((theme: Theme) =>
     root: {
       justifyContent: 'space-between',
     },
-    information: {
-      marginRight: theme.spacing(2),
-      margin: '5px 0'
-    },
     descripition: {
       margin: '5px 0'
     },

@@ -8,7 +8,7 @@ interface IFullWidthCardProps {
   error?: ApolloError | undefined
   loading?: boolean
   children?: React.ReactNode
-}
+};
 
 const FullWidthCard = ({loading, error, children}: IFullWidthCardProps) => {
   const classes = useStyles()

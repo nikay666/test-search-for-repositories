@@ -23,7 +23,7 @@ const InformationPanel = ({stargazers, primaryLanguage, issues, pullRequests}: I
       <InformationBlock
         className={classes.information}
         icon={<StarBorderIcon  fontSize='inherit'/>}
-        title={`${stargazers?.totalCount}`}
+        title={stargazers?.totalCount}
       />
       <InformationBlock
         className={classes.information}

@@ -6,17 +6,17 @@ export const SEARCH_REPOSITORIES = gql`query SearchRepositoriesByName($repositor
     edges{
       node{
         ... on Repository{
+          id
+          nameWithOwner
           owner {
             id
             login
           }
           name
           description
-          languages(first: 1){
-              nodes {
-                name
-                color
-            }
+          primaryLanguage{
+            color
+            name
           }
           stargazers{
             totalCount

@@ -7,7 +7,7 @@ import { ErrorMessage } from '../ErrorMessage';
 interface IFullWidthCardProps {
   error?: ApolloError | undefined
   loading?: boolean
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const FullWidthCard = ({loading, error, children}: IFullWidthCardProps) => {

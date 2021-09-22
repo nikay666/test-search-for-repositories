@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardContent, Container, Typography } from '@material-ui/core';
+import { CardContent, Typography } from '@material-ui/core';
 import { CardTitle } from '../CardTitle';
 import { InformationBlock } from '../InformationBlock';
 import CircleIcon from '@mui/icons-material/Circle';

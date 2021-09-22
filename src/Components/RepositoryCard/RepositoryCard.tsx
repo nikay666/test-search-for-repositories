@@ -2,29 +2,19 @@ import React from 'react'
 import { CardContent, Typography } from '@material-ui/core';
 import { CardTitle } from '../CardTitle';
 import { LanguagesBlock } from '../LanguagesBlock';
-
-import { ITotalCount } from '../../Interfaces/totalCount';
-import { ILanguage, ILanguages } from '../../Interfaces/language';
 import { useStyles } from './styles';
 import { InformationPanel } from '../InformationPanel';
+import { IRepositoryCard } from '../../Interfaces/repository';
 
-interface IRepositoryCardProps {
-  nameWithOwner: string
-  description: string
-  languages: ILanguages
-  primaryLanguage: ILanguage
-  stargazers: ITotalCount
-  issues: ITotalCount
-  pullRequests: ITotalCount
-};
 
-const RepositoryCard = (props: IRepositoryCardProps) => {
+
+const RepositoryCard = (props: IRepositoryCard) => {
   const classes = useStyles();
 
   return (
     <CardContent className={`${classes.root}  flex-wrap`}>
       <div className={classes.mainInfo} >
-        <CardTitle to='/repositories/1'>{props.nameWithOwner}</CardTitle>
+        <CardTitle to={`/repositories/${props.id}`}>{props.nameWithOwner}</CardTitle>
         <InformationPanel
           stargazers={props.stargazers}
           primaryLanguage={props.primaryLanguage}

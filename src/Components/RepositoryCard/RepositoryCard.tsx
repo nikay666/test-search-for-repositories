@@ -4,45 +4,10 @@ import { CardTitle } from '../CardTitle';
 import { InformationBlock } from '../InformationBlock';
 import CircleIcon from '@mui/icons-material/Circle';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import CallMergeIcon from '@mui/icons-material/CallMerge';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { LanguagesBlock } from '../LanguagesBlock';
-
-
-export const useStyles = makeStyles((theme: Theme) => 
-createStyles({
-  root: {
-    justifyContent: 'space-between',
-  },
-  information: {
-    marginRight: theme.spacing(2),
-    margin: '5px 0'
-  },
-  descripition: {
-    margin: '5px 0'
-  },
-  mainInfo: {
-    width: '60%',
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      width: '75%',
-      marginRight: 0,
-      marginBottom: theme.spacing(2)
-    },
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-      marginRight: 0,
-      marginBottom: theme.spacing(2)
-    }
-  },
-  languageBlock: {
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-    }
-  }
-})
-);
+import { useStyles } from './styles';
 
 
 const RepositoryCard = () => {

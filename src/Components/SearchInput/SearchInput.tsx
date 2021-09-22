@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField, InputAdornment } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchInput = () => {
+interface ISearchInputProps {
+  setValue: Function
+}
+
+const SearchInput = ({setValue}: ISearchInputProps) => {
+  const [state, setState] = useState('')
+
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setState(e.currentTarget.value)
+  }
+
+  const enterHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.code === 'Enter'){
+      setValue(state)
+      setState('')
+    }
+  }
+
   return (
     <TextField 
       fullWidth
       type='text' 
       label='Поиск'
       variant='outlined'
+      value={state}
       InputProps={{
         endAdornment: (
           <InputAdornment position='end' >
@@ -16,6 +34,8 @@ const SearchInput = () => {
           </InputAdornment>
         )
       }} 
+      onChange={changeHandler}
+      onKeyDown={enterHandler}
     />  
   );
 };

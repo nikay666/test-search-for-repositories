@@ -10,6 +10,10 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     icon: {
       marginRight: theme.spacing(0.5) 
+    },
+    percent: {
+      color: theme.palette.text.secondary,
+      marginLeft: theme.spacing(0.5)
     }
   })
 );

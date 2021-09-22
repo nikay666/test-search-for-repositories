@@ -6,13 +6,14 @@ import { RepositoryCard } from '../Components/RepositoryCard';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORY } from '../apolloRequests';
+import { RouteComponentProps } from 'react-router'
 
+type TParams = {
+  id: string
+}
 
-const id = 'MDEwOlJlcG9zaXRvcnkyMzA4MzE1Ng=='
-
-
-export const RepositoriesPage = () => {
-  const { loading, error, data } = useQuery(GET_REPOSITORY, { variables: { repositoryID: id }})
+export const RepositoriesPage = ({match}: RouteComponentProps<TParams>) => {
+  const { loading, error, data } = useQuery(GET_REPOSITORY, { variables: { repositoryID: match.params.id }})
   return (
     <div>
       <Link to='/'><IconButton aria-label='Назад'><ArrowBackIcon/></IconButton></Link>

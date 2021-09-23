@@ -13,21 +13,21 @@ const SearchCard = (props: IRepositoryPreview) => {
 
   return (
     <CardContent>
-    <CardTitle to={`/repositories/${props.id}`}>{props.nameWithOwner}</CardTitle>
-    <Typography className={classes.descripition}  color="textPrimary">{props.description}</Typography>
+      <CardTitle to={`/repositories/${props.id}`}>{props.nameWithOwner}</CardTitle>
+      <Typography className={classes.descripition}  color="textPrimary">{props.description}</Typography>
 
-    <div className='flex-center' >
+      <div className='flex-center' >
+        <InformationBlock
+          className={classes.information}
+          icon={<StarBorderIcon  fontSize='inherit'/>}
+          title={formatNumberByStringThousand(props.stargazers.totalCount)}
+      />
       <InformationBlock
-        className={classes.information}
-        icon={<StarBorderIcon  fontSize='inherit'/>}
-        title={formatNumberByStringThousand(props.stargazers?.totalCount)}
-     />
-     <InformationBlock
-        className={classes.information}
-        icon={<CircleIcon fontSize='inherit' htmlColor={props.primaryLanguage.color} />}
-        title={props.primaryLanguage.name}
-     />
-    </div>
+          className={classes.information}
+          icon={<CircleIcon fontSize='inherit' htmlColor={props.primaryLanguage.color} />}
+          title={props.primaryLanguage.name}
+      />
+      </div>
     </CardContent>
   );
 };

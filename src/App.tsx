@@ -19,7 +19,7 @@ function App() {
             <MainContainer>
               <Switch>
                 <Route exact path='/' component={SearchPage} />
-                <Route path='/repositories/:id' component={RepositoriesPage} />
+                <Route path='/repositories/:id'  component={RepositoriesPage} />
               </Switch>
             </MainContainer>
           </HashRouter>

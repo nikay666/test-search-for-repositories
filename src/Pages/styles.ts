@@ -5,14 +5,6 @@ export const useStyles = makeStyles((theme: Theme) =>
     input: {
       width: '100%'
     },
-    listItem: {
-      paddingLeft: 0,
-      paddingRight: 0,
-    },
-    list: {
-      width: '100%',
-      marginBottom: 50
-    },
     message: {
       marginTop: '40px'
     }

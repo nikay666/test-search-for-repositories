@@ -20,12 +20,12 @@ const SearchCard = (props: IRepositoryPreview) => {
         <InformationBlock
           className={classes.information}
           icon={<StarBorderIcon  fontSize='inherit'/>}
-          title={formatNumberByStringThousand(props.stargazers.totalCount)}
+          title={formatNumberByStringThousand(props.stargazers?.totalCount)}
       />
       <InformationBlock
           className={classes.information}
-          icon={<CircleIcon fontSize='inherit' htmlColor={props.primaryLanguage.color} />}
-          title={props.primaryLanguage.name}
+          icon={<CircleIcon fontSize='inherit' htmlColor={props.primaryLanguage?.color} />}
+          title={props.primaryLanguage?.name}
       />
       </div>
     </CardContent>

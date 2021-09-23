@@ -1,8 +1,13 @@
 import gql from "graphql-tag";
 
-export const SEARCH_REPOSITORIES = gql`query SearchRepositoriesByName($repositoryName: String!){ 
-  search(query: $repositoryName, type: REPOSITORY, first: 10){
+export const SEARCH_REPOSITORIES = gql`query SearchRepositoriesByName($repositoryName: String!,$cursor: String){ 
+  search(query: $repositoryName, type: REPOSITORY, first: 10, after: $cursor){
     repositoryCount
+    pageInfo{
+      startCursor
+      endCursor
+      hasNextPage
+    }
     edges{
       node{
         ... on Repository{

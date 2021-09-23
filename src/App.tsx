@@ -1,6 +1,6 @@
 import React from 'react';
 import {  ThemeProvider } from '@material-ui/core/styles';
-import { BrowserRouter as Router , Switch, Route, HashRouter} from 'react-router-dom';
+import { Switch, Route, HashRouter} from 'react-router-dom';
 import {ApolloProvider} from "@apollo/client";
 import { client } from './ApolloClient';
 import { theme } from './theme';

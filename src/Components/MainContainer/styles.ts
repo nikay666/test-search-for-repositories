@@ -7,6 +7,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       minHeight: '100vh',
       width: '100%',
       paddingTop: 30,
+      paddingBottom: 100
     },
   })
 )

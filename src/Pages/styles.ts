@@ -10,7 +10,8 @@ export const useStyles = makeStyles((theme: Theme) =>
       paddingRight: 0,
     },
     list: {
-      width: '100%'
+      width: '100%',
+      marginBottom: 50
     },
     message: {
       marginTop: '40px'

@@ -6,7 +6,7 @@ import { RepositoryCard } from '../Components/RepositoryCard';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORY } from '../apolloRequests';
-import { RouteComponentProps, useHistory } from 'react-router'
+import { RouteComponentProps } from 'react-router'
 
 type TParams = {
   id: string

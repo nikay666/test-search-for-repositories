@@ -11,32 +11,32 @@ export const SearchPage = () => {
   const classes = useStyles();
   const [getRepositories, { loading, error, data, fetchMore }] = useLazyQuery(SEARCH_REPOSITORIES);
 
-  const changeHandler = (value: string) => {
-    getRepositories({variables: {  repositoryName: value } });
+  const changeHandler = (value: string | null) => {
+    getRepositories({ variables: { repositoryName: value}});
   };
   
   const clickHandler = () => {
-    if(fetchMore === undefined) return null
-    if(data.search.pageInfo.hasNextPage){
-      fetchMore({
-        variables: {
-          cursor: data.search.pageInfo.endCursor,
-        }
-      })
-    }
+    if(fetchMore === undefined) return null;
+    const { hasNextPage, endCursor } = data.search.pageInfo;
+    hasNextPage && fetchMore({
+      variables: {
+        cursor: endCursor,
+      }
+    });
   };
 
   return (
     <div className='container' >
       <SearchInput setValue={changeHandler} />
-      { loading && <ListSkeleton/>}
-      {!data 
-        ? <Typography className={classes.message} color='textPrimary' variant='body1'>Здесь пока ничего нет</Typography>
+      {loading && <ListSkeleton/> }
+      {
+        !data ? 
+          !loading && <Typography className={classes.message} color='textPrimary' variant='body1'>Здесь пока ничего нет</Typography> 
         : <>
-            <SearchList edges={data?.search?.edges}  loading={loading} error={error} />
-            <Button  variant='outlined' color='primary' onClick={clickHandler} >Загрузить больше</Button>
+          <SearchList edges={data?.search?.edges}  loading={loading} error={error} />
+          {data.search?.pageInfo.hasNextPage && <Button  variant='outlined' color='primary' onClick={clickHandler} >Загрузить больше</Button>}
           </>
       }
     </div>
-  )
+  );
 };

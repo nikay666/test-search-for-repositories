@@ -5,7 +5,7 @@ import { FullWidthCard } from '../FullWidthCard'
 import { SearchCard } from '../SearchCard'
 import { INode, IRepositoryPreview } from '../../Interfaces/repository'
 import { useStyles } from './styles'
-
+import { v4 as uuidv4 } from 'uuid';
 
 interface ISearchListProps{
   edges: INode<IRepositoryPreview>[]
@@ -17,17 +17,18 @@ const SearchList = ({edges, loading, error}: ISearchListProps) => {
   const classes = useStyles();
 
   return (
-    <List className={classes.list} >
+  <List className={classes.list} >
     { 
       edges.map(({node}: INode<IRepositoryPreview>) => (
-        <ListItem key={node.id} className={classes.listItem} >
+        <ListItem key={uuidv4()} className={classes.listItem} >
         <FullWidthCard loading={loading} error={error}  >
           <SearchCard {...node} />
         </FullWidthCard>
         </ListItem>
       ))
     }
-    </List>
+  </List>
+
   )
 }
 

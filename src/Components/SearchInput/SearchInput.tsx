@@ -3,21 +3,16 @@ import { TextField, InputAdornment } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
 
 interface ISearchInputProps {
-  setValue: Function
+  setValue: (value: string | null) => void
 }
 
 const SearchInput = ({setValue}: ISearchInputProps) => {
   const [state, setState] = useState('')
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setState(e.currentTarget.value)
-  }
-
-  const enterHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if(e.code === 'Enter'){
-      setValue(state)
-      setState('')
-    }
+    const value = e.currentTarget.value
+    value === '' ? setValue(null) : setValue(value)
+    setState(value)
   }
 
   return (
@@ -33,9 +28,8 @@ const SearchInput = ({setValue}: ISearchInputProps) => {
             <SearchIcon/>
           </InputAdornment>
         )
-      }} 
+      }}
       onChange={changeHandler}
-      onKeyDown={enterHandler}
     />  
   );
 };

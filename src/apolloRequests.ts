@@ -4,7 +4,6 @@ export const SEARCH_REPOSITORIES = gql`query SearchRepositoriesByName($repositor
   search(query: $repositoryName, type: REPOSITORY, first: 10, after: $cursor){
     repositoryCount
     pageInfo{
-      startCursor
       endCursor
       hasNextPage
     }

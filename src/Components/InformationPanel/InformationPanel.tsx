@@ -19,7 +19,7 @@ const InformationPanel = ({stargazers, primaryLanguage, issues, pullRequests}: I
   const classes = useStyles();
 
   return (
-    <div className='flex-center' >
+    <div className='flex-center flex-wrap' >
       <InformationBlock
         className={classes.information}
         icon={<StarBorderIcon  fontSize='inherit'/>}
